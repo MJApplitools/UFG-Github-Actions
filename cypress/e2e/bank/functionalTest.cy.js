@@ -8,7 +8,7 @@ describe('ACME Bank', () => {
     it('should log into a bank account', () => {
 
         // Load the login page.
-        cy.visit('http://localhost:3000/bank?validateForm=true');
+        cy.visit('/');
 
         // Verify the full login page loaded correctly.
         cy.eyesCheckWindow({
