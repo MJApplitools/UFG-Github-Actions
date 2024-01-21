@@ -1,0 +1,132 @@
+.dbTableContainer {
+    padding-bottom: 3rem;
+}
+
+.dbTableHeader {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.dbTableData {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.borderAccent {
+	background-color: #1a847b;
+	width: 25px;
+	height: 4px;
+	border-radius: 0px;
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 0px;
+}
+
+.dbTable {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.dbTable th {
+    border: none;
+    font-size: 0.81rem;
+    color: rgba(90, 99, 126, 0.49);
+    letter-spacing: 1px;
+    padding: 0.3rem 1.1rem;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    font-weight: bold;
+    text-align: inherit;
+}
+
+.dbTable tbody {
+    box-shadow: 0px 2px 5px rgba(69, 101, 173, 0.1);
+    transform: translateY(-1px) scale(1.01);
+}
+
+.dbTable tr {
+    border-radius: 4px; 
+}
+
+.dbTable td {
+    padding: 0.9rem 1.1rem;
+    background-color: #fff;
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    vertical-align: middle;
+	overflow-x: hidden;
+  	text-overflow: ellipsis;
+}
+
+.statusIndicator {
+    width: 8px;
+    height: 8px;
+    font-size: 0.72rem;
+    border-radius: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tdStatus {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.tdTime {
+    margin-left: 5px;
+    color: rgba(90, 99, 126, 0.49);
+    font-size: 0.72rem;
+}
+
+.tdImg {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.tdColoredLabel {
+    color: #fff;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 0.81rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.tdAmount {
+    font-weight: bold;
+}
+
+/* @media (min-width: 1100px) {
+    .dbTableData {
+        overflow: visible;
+    }
+} */
+
+@media (max-width: 1100px) {
+	.hideTablet {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) {
+	.hideMobile {
+		display: none;
+	}
+}

@@ -1,0 +1,10 @@
+.dashboardContainer {
+    display: flex;
+    background-color: #f2f4f8;
+}
+
+.dashboardContent {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-x: hidden;
+}

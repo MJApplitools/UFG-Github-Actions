@@ -1,0 +1,178 @@
+.loginScreen {
+    min-height: 100vh;
+    padding-top: 50px;
+	background: linear-gradient(to bottom right, #1a847b, #fff);
+}
+
+.loginFormContainer {
+    background-image: url("../../../img/bg-pattern2.png");
+}
+
+.loginForm {
+    max-width: 450px;
+    margin: 0px auto;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-sizing: border-box;
+	background-color: #fff;
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+	color: #3E4B5B
+}
+
+.loginForm form {
+    padding: 20px 80px;
+    padding-bottom: 60px;
+}
+
+.loginFormLogo {
+    text-align: center;
+    padding: 100px;
+}
+
+.loginFormHeader {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    padding-left: 80px;
+    font-size: 1.5rem;
+    line-height: 1.2;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	font-weight: 500;
+}
+
+.borderAccent {
+	content: "";
+	background-color: #1a847b;
+	width: 32px;
+	height: 7px;
+	border-radius: 2px;
+	display: block;
+	position: absolute;
+	bottom: -4px;
+	left: 80px;
+	position: absolute;
+}
+
+.loginFormGroup {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.loginFormGroup label {
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.loginFormGroup input {
+    font-weight: 300;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+} 
+
+.loginFormGroup input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #047bf8;
+    outline: 0;
+    box-shadow: none;
+}
+
+.loginFormInputIcon {
+    position: absolute;
+    bottom: 5px;
+    font-size: 24px;
+    left: -38px;
+    font-family: 'osfont' !important;
+    line-height: 1;
+	color: #1a847b;
+}
+
+.formAlert {
+    font-weight: 300;
+    color: #6e6446;
+    background-color: #fcedbe;
+    border-color: #fbe6a8;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 2px solid transparent;
+    border-radius: 6px;
+}
+
+.maleCircleIcon::before {
+    content: "\e906";
+}
+
+.fingerprintIcon::before {
+    content: "\e927";
+}
+
+.formOptionsContainer {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.formSubmit {
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	background-color: #1a847b;
+	border: 2px solid #1a847b;
+}
+
+.formSubmit span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.formSubmit:hover {
+    cursor: pointer;
+}
+
+.formInlineCheckContainer {
+    margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0;
+    margin-right: 0.75rem;
+}
+
+.formInlineCheck label {
+    display: inline-block;
+}
+
+.formCheckInput {
+    position: static;
+    margin-top: 0;
+    margin-right: 0.3125rem;
+    margin-left: 0;
+}
+
+.formIconLink {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.formIconLink img {
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.banner {
+    padding: 10px;
+    font-weight: bolder;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #888;
+	background-color: white;
+	color: #1a847b
+}
