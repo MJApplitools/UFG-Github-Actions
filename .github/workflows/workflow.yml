@@ -14,27 +14,3 @@ jobs:
           CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url }}
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
           APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha || github.sha }}
-      # - name: Cypress tests
-      #   if: ${{ success() }}
-      #   run: |
-      #     curl --request POST \
-      #     --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-      #     --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-      #     --header 'content-type: application/json' \
-      #     --data '{
-      #       "context": "e2e",
-      #       "state": "success",
-      #       "description": "Cypress tests passed"
-      #     }'
-      # - name: Cypress tests
-      #   if: ${{ failure() }}
-      #   run: |
-      #     curl --request POST \
-      #     --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-      #     --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-      #     --header 'content-type: application/json' \
-      #     --data '{
-      #       "context": "e2e",
-      #       "state": "failure",
-      #       "description": "Cypress tests failed"
-      #     }'
