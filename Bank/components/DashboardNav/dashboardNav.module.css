@@ -19,6 +19,8 @@
 
 .logoIcon {
     content: "";
+	width: 26px;
+	height: 26px;
     border-radius: 15px;
     position: relative;
     background-color: #98c9fd;
