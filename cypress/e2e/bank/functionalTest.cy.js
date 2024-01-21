@@ -47,7 +47,11 @@ describe('ACME Bank', () => {
         cy.eyesCheckWindow({
             tag: "Login Success",
             target: 'window',
-            fully: true
+            fully: true,
+			layout: [
+                {selector: '.dashboardOverview_accountBalances__3TUPB'},
+                {selector: '.dashboardTable_dbTable___R5Du'}
+            ]
         });
     })
 
