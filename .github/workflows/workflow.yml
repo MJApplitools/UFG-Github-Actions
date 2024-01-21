@@ -1,49 +1,40 @@
 name: ci
-# https://docs.github.com/en/actions/reference/events-that-trigger-workflows
 on: [deployment_status]
 jobs:
   e2e:
-    # only runs this job on successful deploy
+    # only runs this job once Vercel has deployed our preview environment
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
-      - name: Checkout 🛎
+      - name: Checkout
         uses: actions/checkout@v1
-      - name: Run Cypress 🌲
+      - name: Run Cypress
         uses: cypress-io/github-action@v6
         env:
           CYPRESS_BASE_URL: ${{ github.event.deployment_status.target_url }}
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
           APPLITOOLS_BATCH_ID: ${{ github.event.pull_request.head.sha || github.sha }}
-      - name: Cypress tests ✅
-        if: ${{ success() }}
-        # set the merge commit status check
-        # using GitHub REST API
-        # see https://docs.github.com/en/rest/reference/repos#create-a-commit-status
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "context": "e2e",
-            "state": "success",
-            "description": "Cypress tests passed"
-          }'
-      - name: Cypress tests 🚨
-        if: ${{ failure() }}
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "context": "e2e",
-            "state": "failure",
-            "description": "Cypress tests failed"
-          }'
+      # - name: Cypress tests
+      #   if: ${{ success() }}
+      #   run: |
+      #     curl --request POST \
+      #     --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+      #     --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+      #     --header 'content-type: application/json' \
+      #     --data '{
+      #       "context": "e2e",
+      #       "state": "success",
+      #       "description": "Cypress tests passed"
+      #     }'
+      # - name: Cypress tests
+      #   if: ${{ failure() }}
+      #   run: |
+      #     curl --request POST \
+      #     --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
+      #     --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+      #     --header 'content-type: application/json' \
+      #     --data '{
+      #       "context": "e2e",
+      #       "state": "failure",
+      #       "description": "Cypress tests failed"
+      #     }'
